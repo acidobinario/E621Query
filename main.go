@@ -20,7 +20,7 @@ func main() {
 	pages := flag.Int("pages", 1, "Number of pages to query")
 	limit := flag.Int("limit", 1, "Number of pics to display per page")
 	flag.Parse()
-	for pagenum := 0; pagenum <= *pages; pagenum++ {
+	for pagenum := 1; pagenum <= *pages; pagenum++ {
 		url := "https://e621.net/post/index.json?tags=" + *tags + "&pages=" + strconv.Itoa(pagenum) + "&limit=" + strconv.Itoa(*limit)
 		e621CLient := http.Client{
 			Timeout: time.Second * 2,
